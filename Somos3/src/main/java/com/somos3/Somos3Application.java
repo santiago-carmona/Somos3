@@ -1,4 +1,4 @@
-package com.somos3.Somos3;
+package com.Somos3;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
