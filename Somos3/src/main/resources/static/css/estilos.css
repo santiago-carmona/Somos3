@@ -1,0 +1,94 @@
+:root{
+    --somos-fondo : #F9F5F2;
+    --somos-boton: #A96F73;
+    --somos-franja: #F5ECE7;
+    --somos-espacio: #EADFD6; /*temporal en lo que se ponenen las imagenes*/
+}
+
+body{
+    background-color: var(--somos-fondo);
+}
+
+.btn-somos{
+    --bs-btn-color: #fff;
+    --bs-btn-bg: var(--somos-boton);
+    --bs-btn-border-color: var(--somos-boton);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: var(--somos-boton);
+    --bs-btn-hover-border-color: var(--somos-boton);
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: var(--somos-boton);
+    --bs-btn-active-border-color: var(--somos-boton);
+    --bs-btn-border-radius: 0;
+}
+
+.btn-somos:hover {
+    filter: brightness(0.92);
+}
+
+.espacio-imagen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--somos-espacio);
+    color: #8a7f78;
+}
+
+.espacio-producto {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+}
+
+.banner-somos {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1600 / 749;   
+    min-height: 340px;
+    background-color: var(--somos-espacio);
+    background-image: url('../img/bannerSomos3.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.banner-contenido {
+    position: absolute;
+    left: 7%;
+    bottom: 6%;
+    width: 26%;       
+    min-width: 230px;
+}
+
+.banner-titulo {
+    font-size: calc(1.3rem + 0.6vw);
+    font-weight: 400;
+}
+
+.tarjeta-producto {
+    max-width: 210px;
+    border: 0;
+    border-radius: 0;
+    background-color: #fff;
+    box-shadow: 0 4px 12px 1px rgba(0, 0, 0, 0.25);
+}
+
+.franja-beneficios {
+    background-color: var(--somos-franja);
+}
+
+.icono-beneficio {
+    color: var(--somos-boton);
+}
+
+.orden-somos {
+    width: auto;
+    min-width: 200px;
+    font-size: 0.85rem;
+    border-color: var(--somos-boton);
+    border-radius: 0;
+    background-color: transparent;
+}
+
+.orden-somos:focus {
+    border-color: var(--somos-boton);
+    box-shadow: none;
+}
