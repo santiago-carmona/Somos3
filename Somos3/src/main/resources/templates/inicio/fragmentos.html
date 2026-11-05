@@ -1,5 +1,4 @@
 <section th:fragment="banner" class="banner-somos">
-    <!-- La imagen del banner se define en static/css/estilos.css (.banner-somos) -->
     <div class="banner-contenido">
         <h2 class="banner-titulo">[[#{index.banner.titulo1}]]<br/>[[#{index.banner.titulo2}]]</h2>
         <p class="mb-4">[[#{index.banner.descripcion}]]</p>
@@ -12,7 +11,6 @@
     <div class="row g-4">
         <div class="col-6 col-md-3">
             <div class="card tarjeta-producto mx-auto p-2">
-                <!-- Espacio para la imagen del producto. Luego: <img th:src="@{/img/camisa-colombia.png}" class="img-fluid mb-2" alt="Camisa Colombia"/> -->
                 <div class="espacio-imagen espacio-producto mb-2"><i class="fa-regular fa-image"></i></div>
                 <p class="mb-1 small">Camisa Colombia</p>
                 <p class="mb-2 small">₡10.000</p>

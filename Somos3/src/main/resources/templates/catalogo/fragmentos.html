@@ -114,26 +114,26 @@
             </div>
         </div>
     </section>
-</section>
 
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    const selector = document.getElementById('ordenProductos');
-    if (!selector) return;
-    selector.addEventListener('change', function () {
-        document.querySelectorAll('.grupo-productos').forEach(function (grupo) {
-            const productos = Array.from(grupo.querySelectorAll('.producto-item'));
-            productos.forEach(function (producto, indice) {
-                if (!producto.dataset.ordenOriginal) producto.dataset.ordenOriginal = indice;
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const selector = document.getElementById('ordenProductos');
+            if (!selector) return;
+                selector.addEventListener('change', function () {
+                    document.querySelectorAll('.grupo-productos').forEach(function (grupo) {
+                    const productos = Array.from(grupo.querySelectorAll('.producto-item'));
+                    productos.forEach(function (producto, indice) {
+                        if (!producto.dataset.ordenOriginal) producto.dataset.ordenOriginal = indice;
+                    });
+                    productos.sort(function (a, b) {
+                        if (selector.value === 'az') return a.dataset.nombre.localeCompare(b.dataset.nombre, 'es');
+                        if (selector.value === 'precioAsc') return Number(a.dataset.precio) - Number(b.dataset.precio);
+                        if (selector.value === 'precioDesc') return Number(b.dataset.precio) - Number(a.dataset.precio);
+                        return Number(a.dataset.ordenOriginal) - Number(b.dataset.ordenOriginal);
+                    });
+                    productos.forEach(producto => grupo.appendChild(producto));
+                });
             });
-            productos.sort(function (a, b) {
-                if (selector.value === 'az') return a.dataset.nombre.localeCompare(b.dataset.nombre, 'es');
-                if (selector.value === 'precioAsc') return Number(a.dataset.precio) - Number(b.dataset.precio);
-                if (selector.value === 'precioDesc') return Number(b.dataset.precio) - Number(a.dataset.precio);
-                return Number(a.dataset.ordenOriginal) - Number(b.dataset.ordenOriginal);
-            });
-            productos.forEach(producto => grupo.appendChild(producto));
         });
-    });
-});
-</script>
+    </script>
+</section>
