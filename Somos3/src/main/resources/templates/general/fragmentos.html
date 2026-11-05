@@ -33,12 +33,12 @@
                     <li class="nav-item px-2">
                         <a class="nav-link text-dark text-uppercase"
                            th:classappend="${activo == 'categorias'} ? 'text-decoration-underline'"
-                           href="#">[[#{plantilla.categorias}]]</a>
+                           th:href="@{/catalogo/listado#categorias}">[[#{plantilla.categorias}]]</a>
                     </li>
                     <li class="nav-item px-2">
                         <a class="nav-link text-dark text-uppercase"
                            th:classappend="${activo == 'contacto'} ? 'text-decoration-underline'"
-                           href="#">[[#{plantilla.contacto}]]</a>
+                           th:href="@{/contacto}">[[#{plantilla.contacto}]]</a>
                     </li>
                 </ul>
                 <div>

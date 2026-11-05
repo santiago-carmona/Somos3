@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head th:replace="~{general/fragmentos :: head}"></head>
+<body>
+<header th:replace="~{general/fragmentos :: header('contacto')}"></header>
+
+<main class="contacto-pagina">
+    <section class="contacto-principal">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 contacto-texto">
+                    <p class="texto-etiqueta text-uppercase mb-2">SOMOS TRES</p>
+                    <h1 class="contacto-titulo">¡Esperamos<br>tu mensaje!</h1>
+                    <p class="fs-5 fw-semibold mb-1">Escríbenos para realizar tu pedido.</p>
+                    <p class="fs-5 mb-4">Estamos listas para ayudarte.</p>
+                    <a class="contacto-whatsapp" href="https://wa.me/50688245817?text=Hola%20Somos%20Tres,%20me%20gustaría%20realizar%20un%20pedido" target="_blank" rel="noopener">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span>Cel. +506 8824 5817</span>
+                    </a>
+                    <div class="row g-3 mt-4 contacto-beneficios">
+                        <div class="col-4"><i class="fa-regular fa-heart"></i><strong>Calidad</strong><span>que se siente</span></div>
+                        <div class="col-4"><i class="fa-solid fa-box-open"></i><strong>Atención</strong><span>personalizada</span></div>
+                        <div class="col-4"><i class="fa-solid fa-lock"></i><strong>Compra</strong><span>segura</span></div>
+                    </div>
+                    <p class="firma-contacto">Gracias por ser parte<br>de Somos Tres <span>♡</span></p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="contacto-imagen-marco">
+                        <img th:src="@{/img/contactoSomos3.jpeg}" alt="Emprendimiento Somos Tres">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contacto-franja text-center">
+        <p class="mb-0 text-uppercase">Unidas para impulsar tu mejor versión.</p>
+    </section>
+</main>
+<footer th:replace="~{general/fragmentos :: footer}"></footer>
+</body>
+</html>

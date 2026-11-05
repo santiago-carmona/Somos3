@@ -19,7 +19,7 @@ public class SecurityConfig {
                 .requestMatchers(
                     "/",
                     "/index",
-                    "/catalogo/**",
+                    "/catalogo/**",\n                    "/contacto",\n                    "/contacto/**",
                     "/login",
                     "/registro",
                     "/css/**",
