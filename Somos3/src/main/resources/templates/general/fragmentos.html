@@ -44,7 +44,39 @@
                 <div>
                     <a href="#" class="text-dark" th:aria-label="#{plantilla.buscar}"><i class="fa-solid fa-magnifying-glass"></i></a>
                     <a href="#" class="text-dark" th:aria-label="#{plantilla.carrito}"><i class="fa-solid fa-bag-shopping"></i></a>
-                    <a href="#" class="text-dark" th:aria-label="#{plantilla.cuenta}"><i class="fa-regular fa-user"></i></a>
+
+
+                    <!-- Usuario sin iniciar sesión -->
+                    <div th:if="${#authentication == null or #authentication.name == 'anonymousUser'}">
+                        <a th:href="@{/login}"
+                           class="text-dark text-decoration-none me-3">
+                            <i class="fa-regular fa-user"></i>
+                            Iniciar sesión
+                        </a>
+
+                        <a th:href="@{/registro}"
+                           class="btn btn-dark btn-sm">
+                            Crear cuenta
+                        </a>
+                    </div>
+
+                    <!-- Usuario con sesión iniciada -->
+                    <div th:if="${#authentication != null and #authentication.name != 'anonymousUser'}"
+                         class="d-flex align-items-center">
+
+                        <span class="me-3">
+                            <i class="fa-regular fa-user"></i>
+                            Mi cuenta
+                        </span>
+
+                        <form th:action="@{/logout}" method="post">
+                            <button type="submit" class="btn btn-dark btn-sm">
+                                Cerrar sesión
+                            </button>
+                        </form>
+                    </div>
+
+
                 </div>
             </div>
         </div>

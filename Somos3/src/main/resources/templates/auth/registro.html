@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Crear cuenta - Somos3</title>
+    <link rel="stylesheet"
+          th:href="@{/webjars/bootstrap/5.3.8/css/bootstrap.min.css}">
+    <link rel="stylesheet"
+          th:href="@{/css/estilos.css}">
+</head>
+<body class="bg-light">
+<main class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-7 col-lg-6">
+            <div class="card shadow border-0 rounded-4">
+                <div class="card-body p-4">
+                    <h2 class="text-center mb-4">
+                        Crear cuenta
+                    </h2>
+                    <p class="text-center text-muted">
+                        Registrate para formar parte de Somos3
+                    </p>
+                    <div th:if="${error}"
+                         class="alert alert-danger"
+                         th:text="${error}">
+                    </div>
+                    <form th:action="@{/registro}"
+                          th:object="${registroForm}"
+                          method="post">
+                        <div class="mb-3">
+                            <label class="form-label">
+                                Nombre completo
+                            </label>
+                            <input type="text"
+                                   class="form-control"
+                                   th:field="*{nombre}"
+                                   maxlength="100"
+                                   placeholder="Ingrese su nombre"
+                                   required>
+                            <small class="text-danger"
+                                   th:if="${#fields.hasErrors('nombre')}"
+                                   th:errors="*{nombre}">
+                            </small>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">
+                                Correo electrónico
+                            </label>
+                            <input type="email"
+                                   class="form-control"
+                                   th:field="*{correo}"
+                                   maxlength="150"
+                                   placeholder="ejemplo@correo.com"
+                                   required>
+                            <small class="text-danger"
+                                   th:if="${#fields.hasErrors('correo')}"
+                                   th:errors="*{correo}">
+                            </small>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">
+                                Contrasena
+                            </label>
+                            <input type="password"
+                                   class="form-control"
+                                   th:field="*{contrasena}"
+                                   minlength="8"
+                                   maxlength="72"
+                                   autocomplete="new-password"
+                                   placeholder="Mínimo 8 caracteres"
+                                   required>
+                            <small class="text-danger"
+                                   th:if="${#fields.hasErrors('contrasena')}"
+                                   th:errors="*{contrasena}">
+                            </small>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label">
+                                Confirmar contrasena
+                            </label>
+                            <input type="password"
+                                   class="form-control"
+                                   th:field="*{confirmarContrasena}"
+                                   autocomplete="new-password"
+                                   placeholder="Repita su contrasena"
+                                   required>
+                            <small class="text-danger"
+                                   th:if="${#fields.hasErrors('confirmarContrasena')}"
+                                   th:errors="*{confirmarContrasena}">
+                            </small>
+                        </div>
+                        <button type="submit"
+                                class="btn btn-dark w-100">
+                            Crear cuenta
+                        </button>
+                    </form>
+                    <p class="text-center mt-4">
+                        ¿Ya tenés una cuenta?
+                        <a th:href="@{/login}">
+                            Iniciar sesión
+                        </a>
+                    </p>
+                    <div class="text-center">
+                        <a th:href="@{/}" class="text-secondary">
+                            Volver al inicio
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

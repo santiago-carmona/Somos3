@@ -162,3 +162,8 @@ CREATE TABLE PEDIDODETALLE(
     FOREIGN KEY (id_pedido) REFERENCES PEDIDO(id_pedido),
     FOREIGN KEY (id_inventario) REFERENCES INVENTARIO(id_inventario)
 );
+
+
+SELECT id_usuario, nombre, correo, contrasena, rol, estado
+FROM USUARIO;
+DESCRIBE USUARIO;
